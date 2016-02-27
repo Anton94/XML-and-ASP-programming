@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT RoboSimulation (SimulationName, SimulationOwner, SimulationOwnerEmail, Environments, Robots, Maps, Algorithms)>
+    <!ELEMENT SimulationName (#PCDATA)>
+    <!ELEMENT SimulationOwner (#PCDATA)>
+    <!ELEMENT SimulationOwnerEmail (#PCDATA)>
+    <!ELEMENT  Environments (Environment*)>
+        <!ELEMENT Environment (TravelCostEnter, TravelCostIn, TravelCostExit, Damage)>
+            <!ATTLIST Environment id ID #REQUIRED
+                                  name CDATA #REQUIRED>
+            <!ELEMENT TravelCostEnter (#PCDATA)>
+            <!ELEMENT TravelCostIn (#PCDATA)>
+            <!ELEMENT TravelCostExit (#PCDATA)>
+            <!ELEMENT Damage (#PCDATA)>
+    <!ELEMENT Robots (Robot*)>
+        <!ELEMENT Robot (RobotMeshGrid, Speed, SpeedBack, TurningSpeed, TurningSpeedBack, Wheels?, Sensors?, Rotors?)>
+            <!ATTLIST Robot id ID #REQUIRED
+                            environments IDREFS #REQUIRED
+                            name CDATA #REQUIRED
+                            owner CDATA #REQUIRED>
+            <!ELEMENT RobotMeshGrid (#PCDATA)>
+            <!ELEMENT Speed (#PCDATA)>
+            <!ELEMENT SpeedBack (#PCDATA)>
+            <!ELEMENT TurningSpeed (#PCDATA)>
+            <!ELEMENT TurningSpeedBack (#PCDATA)>            
+            <!ELEMENT Wheels (Wheel*)>          
+                <!ELEMENT Wheel (WheelMeshGrid, WheelDiameter, WheelWidth)>
+                    <!ATTLIST Wheel driving (ДА|НЕ) #REQUIRED>
+                    <!ELEMENT WheelMeshGrid (#PCDATA)>
+                    <!ELEMENT WheelDiameter (#PCDATA)>
+                    <!ELEMENT WheelWidth (#PCDATA)>
+            <!ELEMENT Sensors (Sensor*)>
+                <!ELEMENT Sensor (SensorMeshGrid, NumberOfValusPerSecond)>
+                    <!ATTLIST Sensor name CDATA #REQUIRED
+                                     valueType CDATA #REQUIRED>
+                    <!ELEMENT SensorMeshGrid (#PCDATA)>
+                    <!ELEMENT NumberOfValusPerSecond (#PCDATA)>
+            <!ELEMENT Rotors (Rotor*)>
+                <!ELEMENT Rotor (RotorMeshGrid, RotorLiftingPower)>
+                    <!ELEMENT RotorMeshGrid (#PCDATA)>
+                    <!ELEMENT RotorLiftingPower (#PCDATA)>
+    <!ELEMENT Maps (Map*)>
+        <!ELEMENT Map (MapData, Denivelation)>
+            <!ATTLIST Map id ID #REQUIRED
+                          environments IDREFS #REQUIRED>
+            <!ELEMENT MapData (#PCDATA)>
+            <!ELEMENT Denivelation (#PCDATA)>
+    <!ELEMENT Algorithms (Algorithm*)>
+        <!ELEMENT Algorithm (Complexity, Depth)>
+            <!ATTLIST Algorithm id ID #REQUIRED
+                                name CDATA #REQUIRED 
+                                diffEnvironments (ДА|НЕ) #REQUIRED
+                                multipleDestPoints (ДА|НЕ) #REQUIRED>
+            <!ELEMENT Complexity (#PCDATA)>
+            <!ELEMENT Depth (#PCDATA)>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
+<RoboSimulation>
+    <SimulationName>Симулация 19</SimulationName>
+    <SimulationOwner>Виктори</SimulationOwner>
+    <SimulationOwnerEmail>viktori@gmail.com</SimulationOwnerEmail>
+    <Environments>
+        <Environment id="IDE000" name="Вода">
+            <TravelCostEnter>1.4</TravelCostEnter>
+            <TravelCostIn>2.3</TravelCostIn>
+            <TravelCostExit>1.4</TravelCostExit>
+            <Damage>1.8</Damage>
+        </Environment>     
+        <Environment id="IDE001" name="Земя">
+            <TravelCostEnter>1.4</TravelCostEnter>
+            <TravelCostIn>1.3</TravelCostIn>
+            <TravelCostExit>1.4</TravelCostExit>
+            <Damage>0.8</Damage>
+        </Environment>   
+    </Environments>
+    
+    <Robots>
+        <Robot id="IDR000" environments="IDE000 IDE001" name="Робо КМЛ200210" owner="Вяра">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>23.6</Speed>
+            <SpeedBack>21.4</SpeedBack>
+            <TurningSpeed>13.5</TurningSpeed>
+            <TurningSpeedBack>13.5</TurningSpeedBack>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>15.5</WheelDiameter>
+                    <WheelWidth>6.3</WheelWidth>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>16.0</WheelDiameter>
+                    <WheelWidth>6.3</WheelWidth>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>16.0</WheelDiameter>
+                    <WheelWidth>6.3</WheelWidth>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор за измерване на звука" valueType="звук">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <NumberOfValusPerSecond>4</NumberOfValusPerSecond>
+                </Sensor>
+            </Sensors>
+            <Rotors>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh0.obj</RotorMeshGrid>
+                    <RotorLiftingPower>6.0</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh1.obj</RotorMeshGrid>
+                    <RotorLiftingPower>6.0</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh2.obj</RotorMeshGrid>
+                    <RotorLiftingPower>6.0</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh3.obj</RotorMeshGrid>
+                    <RotorLiftingPower>6.0</RotorLiftingPower>
+                </Rotor>
+            </Rotors>
+        </Robot>
+        <Robot id="IDR001" environments="IDE000" name="Робо КМЛ3030" owner="Атанас">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>13.7</Speed>
+            <SpeedBack>13.6</SpeedBack>
+            <TurningSpeed>12.7</TurningSpeed>
+            <TurningSpeedBack>12.8</TurningSpeedBack>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>4.8</WheelDiameter>
+                    <WheelWidth>2.5</WheelWidth>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>4.8</WheelDiameter>
+                    <WheelWidth>2.5</WheelWidth>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>5.8</WheelDiameter>
+                    <WheelWidth>1.5</WheelWidth>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh3.obj</WheelMeshGrid>
+                    <WheelDiameter>5.8</WheelDiameter>
+                    <WheelWidth>1.5</WheelWidth>
+                </Wheel>
+            </Wheels>
+            <Rotors>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh0.obj</RotorMeshGrid>
+                    <RotorLiftingPower>11.3</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh1.obj</RotorMeshGrid>
+                    <RotorLiftingPower>11.3</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh2.obj</RotorMeshGrid>
+                    <RotorLiftingPower>12.3</RotorLiftingPower>
+                </Rotor>
+            </Rotors>
+        </Robot>
+        <Robot id="IDR002" environments="IDE001" name="Робо МНК20102" owner="Белчо">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>21.0</Speed>
+            <SpeedBack>18.6</SpeedBack>
+            <TurningSpeed>21.0</TurningSpeed>
+            <TurningSpeedBack>19.4</TurningSpeedBack>
+            <Sensors>
+                <Sensor name="Сензор за измерване на топлината" valueType="топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <NumberOfValusPerSecond>6</NumberOfValusPerSecond>
+                </Sensor>
+            </Sensors>
+            <Rotors>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh0.obj</RotorMeshGrid>
+                    <RotorLiftingPower>18.0</RotorLiftingPower>
+                </Rotor>
+                <Rotor>
+                    <RotorMeshGrid>RotorMesh1.obj</RotorMeshGrid>
+                    <RotorLiftingPower>18.0</RotorLiftingPower>
+                </Rotor>
+            </Rotors>
+        </Robot>
+    </Robots>
+    
+    <Maps>
+        <Map id="IDM000" environments="IDE000 IDE001">
+            <MapData>map000.bin</MapData>
+            <Denivelation>4</Denivelation>
+        </Map>
+        <Map id="IDM001" environments="IDE001">
+            <MapData>map001.bin</MapData>
+            <Denivelation>13</Denivelation>
+        </Map>
+    </Maps>
+    
+    <Algorithms>
+        <Algorithm id="IDA000" name="Търсене в дълбочина" diffEnvironments="НЕ" multipleDestPoints="ДА">
+            <Complexity>Линейна</Complexity>
+            <Depth>21</Depth>
+        </Algorithm> 
+        <Algorithm id="IDA001" name="Най-бързото спускане" diffEnvironments="НЕ" multipleDestPoints="НЕ">
+            <Complexity>Линейно по пътя с евристика</Complexity>
+            <Depth>213</Depth>
+        </Algorithm>   
+    </Algorithms>
+</RoboSimulation>
