@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
+<RoboSimulation>
+    <Environments>
+        <Environment id="IDE000" name="Земя">
+            <TravelCostEnter>1.0</TravelCostEnter>
+            <TravelCostIn>1.0</TravelCostIn>
+            <TravelCostExit>1.0</TravelCostExit>
+            <Damage>0.0</Damage>
+        </Environment>
+        <Environment id="IDE001" name="Вода">
+            <TravelCostEnter>1.6</TravelCostEnter>
+            <TravelCostIn>2.1</TravelCostIn>
+            <TravelCostExit>1.8</TravelCostExit>
+            <Damage>1.5</Damage>
+        </Environment>
+        <Environment id="IDE002" name="Въздух">
+            <TravelCostEnter>1.2</TravelCostEnter>
+            <TravelCostIn>0.6</TravelCostIn>
+            <TravelCostExit>0.0</TravelCostExit>
+            <Damage>0.0</Damage>
+        </Environment>     
+    </Environments>
+    
+    <Robots>
+        <Robot id="IDR000" environments="IDE000 IDE001" name="Робо A4000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>13.0</Speed>
+            <TurningSpeed>8.0</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>1.5</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>1.5</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>2.0</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на температура</Value>
+                </Sensor>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+        </Robot>        
+        <Robot id="IDR001" environments="IDE000 IDE002" name="Робо Б4000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>19.0</Speed>
+            <TurningSpeed>10.5</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>5.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>2.8</WheelDiameter>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>2.8</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на температура</Value>
+                </Sensor>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+            <Fins>
+                <Fin>
+                    <FinMeshGrid>finMesh0.obj</FinMeshGrid>
+                    <FinLiftingPower>2.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh1.obj</FinMeshGrid>
+                    <FinLiftingPower>2.0</FinLiftingPower>
+                </Fin>
+            </Fins>
+        </Robot>        
+        <Robot id="IDR002" environments="IDE000 IDE001 IDE002" name="Робо В4000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>24.2</Speed>
+            <TurningSpeed>24.0</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>3.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>3.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>4.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh3.obj</WheelMeshGrid>
+                    <WheelDiameter>4.0</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+                <Sensor name="Сензор звук">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на силата на звука</Value>
+                </Sensor>
+            </Sensors>
+            <Fins>
+                <Fin>
+                    <FinMeshGrid>finMesh0.obj</FinMeshGrid>
+                    <FinLiftingPower>2.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh1.obj</FinMeshGrid>
+                    <FinLiftingPower>2.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh2.obj</FinMeshGrid>
+                    <FinLiftingPower>1.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh3.obj</FinMeshGrid>
+                    <FinLiftingPower>1.0</FinLiftingPower>
+                </Fin>
+            </Fins>
+        </Robot>           
+        <Robot id="IDR003" environments="IDE002" name="Робо Г4000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>32.0</Speed>
+            <TurningSpeed>26.25</TurningSpeed>
+            <Sensors>
+                <Sensor name="Сензор топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на температура</Value>
+                </Sensor>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+            <Fins>
+                <Fin>
+                    <FinMeshGrid>finMesh0.obj</FinMeshGrid>
+                    <FinLiftingPower>5.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh1.obj</FinMeshGrid>
+                    <FinLiftingPower>5.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh2.obj</FinMeshGrid>
+                    <FinLiftingPower>6.0</FinLiftingPower>
+                </Fin>
+                <Fin>
+                    <FinMeshGrid>finMesh3.obj</FinMeshGrid>
+                    <FinLiftingPower>6.0</FinLiftingPower>
+                </Fin>
+            </Fins>
+        </Robot>   
+    </Robots>
+    
+    <Maps>
+        <Map id="IDM000" environments="IDE000 IDE001 IDE002">
+            <MapData>map000.bin</MapData>
+        </Map>
+    </Maps>
+    
+    <Algorithms>
+        <Algorithm id="IDA002" name="А звезда" diffEnvironments="ДА">
+            <Complexity>Зависи от евристиката</Complexity>
+            <Depth>35</Depth>
+        </Algorithm>  
+    </Algorithms>
+</RoboSimulation>

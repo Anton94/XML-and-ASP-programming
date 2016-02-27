@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT RoboSimulation (Environments, Robots, Maps, Algorithms)>
+    <!ELEMENT  Environments (Environment*)>
+        <!ELEMENT Environment (TravelCostEnter, TravelCostIn, TravelCostExit, Damage)>
+            <!ATTLIST Environment id ID #REQUIRED
+                                  name CDATA #REQUIRED>
+            <!ELEMENT TravelCostEnter (#PCDATA)>
+            <!ELEMENT TravelCostIn (#PCDATA)>
+            <!ELEMENT TravelCostExit (#PCDATA)>
+            <!ELEMENT Damage (#PCDATA)>
+    <!ELEMENT Robots (Robot*)>
+        <!ELEMENT Robot (RobotMeshGrid, Speed, TurningSpeed, Wheels?, Sensors?, Fins?)>
+            <!ATTLIST Robot id ID #REQUIRED
+                            environments IDREFS #REQUIRED
+                            name CDATA #REQUIRED>
+            <!ELEMENT RobotMeshGrid (#PCDATA)>
+            <!ELEMENT Speed (#PCDATA)>
+            <!ELEMENT TurningSpeed (#PCDATA)>
+            <!ELEMENT Wheels (Wheel*)>          
+                <!ELEMENT Wheel (WheelMeshGrid, WheelDiameter)>
+                    <!ATTLIST Wheel driving (ДА|НЕ) #REQUIRED>
+                    <!ELEMENT WheelMeshGrid (#PCDATA)>
+                    <!ELEMENT WheelDiameter (#PCDATA)>
+            <!ELEMENT Sensors (Sensor*)>
+                <!ELEMENT Sensor (SensorMeshGrid, Value)>
+                    <!ATTLIST Sensor name CDATA #REQUIRED>
+                    <!ELEMENT SensorMeshGrid (#PCDATA)>
+                    <!ELEMENT Value (#PCDATA)>
+            <!ELEMENT Fins (Fin*)>
+                <!ELEMENT Fin (FinMeshGrid, FinLiftingPower)>
+                    <!ELEMENT FinMeshGrid (#PCDATA)>
+                    <!ELEMENT FinLiftingPower (#PCDATA)>
+    <!ELEMENT Maps (Map*)>
+        <!ELEMENT Map (MapData)>
+            <!ATTLIST Map id ID #REQUIRED
+                          environments IDREFS #REQUIRED>
+            <!ELEMENT MapData (#PCDATA)>
+    <!ELEMENT Algorithms (Algorithm*)>
+        <!ELEMENT Algorithm (Complexity, Depth)>
+            <!ATTLIST Algorithm id ID #REQUIRED
+                                name CDATA #REQUIRED 
+                                diffEnvironments (ДА|НЕ) #REQUIRED>
+            <!ELEMENT Complexity (#PCDATA)>
+            <!ELEMENT Depth (#PCDATA)>

@@ -1,0 +1,2 @@
+How to run DOM JavaScript generator:
+	Open CMD and enter: 'cscript XMLDocumentGenerator.js'

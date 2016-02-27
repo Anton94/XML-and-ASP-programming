@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
+<RoboSimulation>
+    <Environments>
+        <Environment id="IDE000" name="Земя">
+            <TravelCostEnter>1.0</TravelCostEnter>
+            <TravelCostIn>1.0</TravelCostIn>
+            <TravelCostExit>1.0</TravelCostExit>
+            <Damage>0.0</Damage>
+        </Environment>
+        <Environment id="IDE001" name="Вода">
+            <TravelCostEnter>1.0</TravelCostEnter>
+            <TravelCostIn>2.0</TravelCostIn>
+            <TravelCostExit>1.5</TravelCostExit>
+            <Damage>0.5</Damage>
+        </Environment>
+        <Environment id="IDE002" name="Блато">
+            <TravelCostEnter>1.0</TravelCostEnter>
+            <TravelCostIn>4.0</TravelCostIn>
+            <TravelCostExit>2.5</TravelCostExit>
+            <Damage>2.0</Damage>
+        </Environment>         
+    </Environments>
+    
+    <Robots>
+        <Robot id="IDR000" environments="IDE000 IDE001 IDE002" name="Робо A2000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>10</Speed>
+            <TurningSpeed>6</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>0.5</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>0.5</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на температура</Value>
+                </Sensor>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+        </Robot>
+        <Robot id="IDR001" environments="IDE000 IDE001 IDE002" name="Робо Б2000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>20</Speed>
+            <TurningSpeed>16</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>1.5</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>1.5</WheelDiameter>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>0.5</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+        </Robot>
+        <Robot id="IDR002" environments="IDE000" name="Робо В2000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>30</Speed>
+            <TurningSpeed>26</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>2.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>2.0</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор разстояние">
+                    <SensorMeshGrid>distSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на разстояние</Value>
+                </Sensor>
+            </Sensors>
+        </Robot>
+        <Robot id="IDR003" environments="IDE001" name="Робо Г2000">
+            <RobotMeshGrid>mesh.obj</RobotMeshGrid>
+            <Speed>13</Speed>
+            <TurningSpeed>10</TurningSpeed>
+            <Wheels>
+                <Wheel driving="ДА">
+                    <WheelMeshGrid>wheelMesh0.obj</WheelMeshGrid>
+                    <WheelDiameter>2.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh1.obj</WheelMeshGrid>
+                    <WheelDiameter>1.0</WheelDiameter>
+                </Wheel>
+                <Wheel driving="НЕ">
+                    <WheelMeshGrid>wheelMesh2.obj</WheelMeshGrid>
+                    <WheelDiameter>1.0</WheelDiameter>
+                </Wheel>
+            </Wheels>
+            <Sensors>
+                <Sensor name="Сензор топлина">
+                    <SensorMeshGrid>tempSensorMesh.obj</SensorMeshGrid>
+                    <Value>Сензор за измерване на температура</Value>
+                </Sensor>
+            </Sensors>
+        </Robot>
+    </Robots>
+    
+    <Maps>
+        <Map id="IDM000" environments="IDE000 IDE001 IDE002">
+            <MapData>map000.bin</MapData>
+        </Map>
+        <Map id="IDM001" environments="IDE001 IDE002">
+            <MapData>map001.bin</MapData>
+        </Map>
+        <Map id="IDM002" environments="IDE001 IDE002">
+            <MapData>map002.bin</MapData>
+        </Map>
+        <Map id="IDM003" environments="IDE002">
+            <MapData>map003.bin</MapData>
+        </Map>
+    </Maps>
+   
+    <Algorithms>
+        <Algorithm id="IDA000" name="Търсене в ширина" diffEnvironments="НЕ">
+            <Complexity>Линейна</Complexity>
+            <Depth>20</Depth>
+        </Algorithm>
+        <Algorithm id="IDA001" name="Търсене в дълбочина" diffEnvironments="НЕ">
+            <Complexity>Линейна</Complexity>
+            <Depth>20</Depth>
+        </Algorithm>
+        <Algorithm id="IDA002" name="А звезда" diffEnvironments="ДА">
+            <Complexity>Зависи от евристиката</Complexity>
+            <Depth>20</Depth>
+        </Algorithm>        
+    </Algorithms>
+</RoboSimulation>
