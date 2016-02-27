@@ -1,2 +1,2 @@
-# XML-and-ASP-programming
-XML course and ASP programming course
+# XML-and-ASP.NET-programming
+XML and ASP.NET projects
