@@ -6,7 +6,7 @@
 
 */
 
-use [ASP programming project]
+use [ASP programming]
 go
 
 create table RoboSimulations(
@@ -85,7 +85,7 @@ go
 
 /*
 insert into Wheels (driving, wheel_mesh_grid, wheel_diameter, wheel_width)
-values ('да', 'аааааааааааааааа', 10.32, 1203.322)
+values ('НЕ', 'асд', 10.32, 1203.322)
 
 select * from Wheels
 
@@ -234,5 +234,25 @@ drop table Robots
 drop table Maps
 drop table Algorithms
 drop table RoboSimulations
+
+*/
+
+insert into RoboSimulations (simulation_name, simulation_owner, simulation_owner_email)
+values ('Симулация 1', 'Тони', 'anton@gmail.com')
+
+insert into RoboSimulations (simulation_name, simulation_owner, simulation_owner_email)
+values ('Симулация 2', 'Тони2', 'anton@gmail.com2')
+
+insert into RoboSimulations (simulation_name, simulation_owner, simulation_owner_email)
+values ('Симулация 3', 'Тони3', 'anton@gmail.com3')
+/*
+insert into 
+
+insert into Wheels (driving, wheel_mesh_grid, wheel_diameter, wheel_width)
+values ('НЕ', 'асд', 10.32, 1203.322)
+
+select * from Wheels
+
+
 
 */
