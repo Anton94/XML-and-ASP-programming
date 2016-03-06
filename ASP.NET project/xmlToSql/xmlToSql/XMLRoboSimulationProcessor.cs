@@ -246,9 +246,13 @@ namespace xmlToSql
 
 
             RoboSimulation rs = null;
-            //WorkingDays wh = null;
-            //Books book = null;
             Environment en = null;
+            Robot r = null;
+            Wheel w = null;
+            Sensor s = null;
+            Rotor rot = null;
+            Map m = null;
+            Algorithm a = null;
 
             try
             {
@@ -270,9 +274,11 @@ namespace xmlToSql
                             case "SimulationOwnerEmail":
                                 rs.simulation_owner_email = (string)reader.ReadElementContentAs(typeof(string), null);
                                 break;
+                            /* Environment */
                             case "Environment":
                                 en = new Environment();
                                 en.name = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ENVIRONMENT_NAME);
+                                rs.Environments.Add(en);
                                 break;
                             case "TravelCostEnter":
                                 en.travel_cost_enter = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
@@ -285,9 +291,97 @@ namespace xmlToSql
                                 break;
                             case "Damage":
                                 en.damage = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
-                                rs.Environments.Add(en);
                                 break;
-                               
+                            /* Robot */
+                            case "Robot":
+                                r = new Robot();
+                                r.name = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ROBOT_NAME);
+                                r.owner = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ROBOT_OWNER);
+                                rs.Robots.Add(r);
+                                break;
+                            case "RobotMeshGrid":
+                                r.robot_mesh_grid = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "Speed":
+                                r.speed = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            case "SpeedBack":
+                                r.speed_back = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            case "TurningSpeed":
+                                r.turning_speed = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            case "TurningSpeedBack":
+                                r.turning_speed_back = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            /* Robot Wheels */
+                            case "Wheel":
+                                w = new Wheel();
+                                w.driving = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_WHEEL_DIRIVING);
+                                r.Wheels.Add(w);
+                                break;
+                            case "WheelMeshGrid":
+                                w.wheel_mesh_grid = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "WheelDiameter":
+                                w.wheel_diameter = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            case "WheelWidth":
+                                w.wheel_width = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            /* Robot Sensors */
+                            case "Sensor":
+                                s = new Sensor();
+                                //TODO TO DO!!!
+                                string sName = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_SENSOR_NAME);
+                                if (sName.Length > 32)
+                                    sName = "TO DO FIX IT";
+                                s.name = sName;
+                                s.value_type = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_SENSOR_VALUETYPE);
+                                r.Sensors.Add(s);
+                                break;
+                            case "SensorMeshGrid":
+                                s.sensor_mesh_grid = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "NumberOfValusPerSecond":
+                                s.number_of_values_per_second = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            /* Robot Rotors */
+                            case "Rotor":
+                                rot = new Rotor();
+                                r.Rotors.Add(rot);
+                                break;
+                            case "RotorMeshGrid":
+                                rot.rotor_mesh_grid = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "RotorLiftingPower":
+                                rot.rotor_lifting_power = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            /* Map */
+                            case "Map":
+                                m = new Map();
+                                rs.Maps.Add(m);
+                                break;
+                            case "MapData":
+                                m.map_data = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "Denivelation":
+                                m.denivelation = Decimal.Parse((string)reader.ReadElementContentAs(typeof(string), null));
+                                break;
+                            /* Algorithm */
+                            case "Algorithm":
+                                a = new Algorithm();
+                                a.name = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ALGORITHM_NAME);
+                                a.multipleDestPoints = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ALGORITHM_MULTIPLEDESTPOINTS);
+                                a.diffEnvironments = reader.GetAttribute(RoboSimulationElements.ROBOSIMULATION_ALGORITHM_DIFFENVIRONMENTS);
+                                rs.Algorithms.Add(a);
+                                break;
+                            case "Complexity":
+                                a.complexity = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
+                            case "Depth":
+                                a.depth = (string)reader.ReadElementContentAs(typeof(string), null);
+                                break;
                         }
 
                 }

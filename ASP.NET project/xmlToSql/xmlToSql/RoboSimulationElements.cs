@@ -61,7 +61,7 @@ namespace xmlToSql
         public static string ROBOSIMULATION_WHEELS_XPATH = ROOT_ELEMENT_XPATH + "/Wheels";
         public static string ROBOSIMULATION_WHEEL = "Wheel";
         public static string ROBOSIMULATION_WHEEL_XPATH = ROBOSIMULATION_WHEELS_XPATH + "/Wheel";
-        public static string ROBOSIMULATION_WHEEL_ID = "driving";
+        public static string ROBOSIMULATION_WHEEL_DIRIVING = "driving";
         public static string ROBOSIMULATION_WHEEL_WHEELMESHGRID = "WheelMeshGrid";
         public static string ROBOSIMULATION_WHEEL_WHEELMESHGRID_XPATH = ROBOSIMULATION_WHEEL_XPATH + "/WheelMeshGrid";
         public static string ROBOSIMULATION_WHEEL_WHEELMDIAMETER = "WheelDiameter";

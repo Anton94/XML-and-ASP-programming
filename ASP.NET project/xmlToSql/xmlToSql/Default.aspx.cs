@@ -20,7 +20,13 @@ namespace xmlToSql
             xmlToSql.Program.InsertXmlDataToDB(DirPath);
             // Updates the grid veiw after adding the new data
             GridView1.DataBind();
-            GridView2.DataBind(); 
+            GridView2.DataBind();
+            GridView3.DataBind();
+            GridView4.DataBind();
+            GridView5.DataBind();
+            GridView6.DataBind();
+            GridView7.DataBind();
+            GridView8.DataBind();
         }
 
         protected void ButtonDeleteAllData_Click(object sender, EventArgs e)
@@ -28,7 +34,25 @@ namespace xmlToSql
             xmlToSql.Program.DeleteDatabaseRecords();
             // Updates the grid veiw after deleting the data
             GridView1.DataBind();
-            GridView2.DataBind(); 
+            GridView2.DataBind();
+            GridView3.DataBind();
+            GridView4.DataBind();
+            GridView5.DataBind();
+            GridView6.DataBind();
+            GridView7.DataBind();
+            GridView8.DataBind();
+        }
+
+        protected void ButtonChangeTablesPaging_Click(object sender, EventArgs e)
+        {
+            GridView1.AllowPaging = !GridView1.AllowPaging;
+            GridView2.AllowPaging = !GridView2.AllowPaging;
+            GridView3.AllowPaging = !GridView3.AllowPaging;
+            GridView4.AllowPaging = !GridView4.AllowPaging;
+            GridView5.AllowPaging = !GridView5.AllowPaging;
+            GridView6.AllowPaging = !GridView6.AllowPaging;
+            GridView7.AllowPaging = !GridView7.AllowPaging;
+            GridView8.AllowPaging = !GridView8.AllowPaging;
         }
     }
 }
