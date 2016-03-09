@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
-<RoboSimulation id="S0">
-    <SimulationName>Симулация 17</SimulationName>
-    <SimulationOwner>Мариета</SimulationOwner>
+<RoboSimulation id="S0" name="Симулация 17" owner="Мариета">
     <SimulationOwnerEmail>marieta@gmail.com</SimulationOwnerEmail>
+    <SimulationDescription>Описание на симулация 17</SimulationDescription>
+    <SimulationRating>5.53</SimulationRating>
     <Environments>
         <Environment id="IDE000" name="Земя">
             <TravelCostEnter>2.2</TravelCostEnter>
@@ -20,7 +20,7 @@
     </Environments>
     
     <Robots>
-        <Robot id="IDR000" environments="IDE000 IDE001" name="Робо УКМ2001" owner="Мимито">
+        <Robot id="IDR000" name="Робо УКМ2001" owner="Мимито">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>14.5</Speed>
             <SpeedBack>11.5</SpeedBack>
@@ -50,7 +50,7 @@
                 </Sensor>
             </Sensors>
         </Robot>        
-        <Robot id="IDR001" environments="IDE001" name="Робо ТЯС200" owner="Велин">
+        <Robot id="IDR001" name="Робо ТЯС200" owner="Велин">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>17.0</Speed>
             <SpeedBack>20.3</SpeedBack>
@@ -94,7 +94,7 @@
                 </Rotor>
             </Rotors>
         </Robot>        
-        <Robot id="IDR002" environments="IDE000 IDE001" name="Робо 007" owner="Венцислав">
+        <Robot id="IDR002" name="Робо 007" owner="Венцислав">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>21.8</Speed>
             <SpeedBack>21.7</SpeedBack>
@@ -151,7 +151,7 @@
                 </Rotor>
             </Rotors>
         </Robot>           
-        <Robot id="IDR003" environments="IDE000" name="Робо РЯС2012" owner="Борислава">
+        <Robot id="IDR003" name="Робо РЯС2012" owner="Борислава">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>23.9</Speed>
             <SpeedBack>23.9</SpeedBack>
@@ -207,11 +207,11 @@
     </Robots>
     
     <Maps>
-        <Map id="IDM000" environments="IDE000 IDE001">
+        <Map id="IDM000" name="Карта 1">
             <MapData>map000.bin</MapData>
             <Denivelation>6.3</Denivelation>
         </Map>
-        <Map id="IDM001" environments="IDE001">
+        <Map id="IDM001" name="Карта 2">
             <MapData>map001.bin</MapData>
             <Denivelation>0</Denivelation>
         </Map>

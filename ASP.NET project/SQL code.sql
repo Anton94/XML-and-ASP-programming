@@ -14,6 +14,8 @@ id int identity constraint pk_RoboSimulations primary key not null,
 simulation_name nvarchar(64) not null,
 simulation_owner nvarchar(64) not null,
 simulation_owner_email nvarchar(32) not null,
+simulation_description nvarchar(1024) not null,
+simulation_rating decimal(16,2) constraint ck_simulation_rating CHECK (simulation_rating >= 0.0 AND simulation_rating <= 6.0),
 )
 go
 
@@ -106,7 +108,7 @@ go
 
 create table Sensors(
 id int identity constraint pk_Sensors primary key not null,
-name nvarchar(32) not null,
+name nvarchar(128) not null,
 value_type nvarchar(32) not null,
 sensor_mesh_grid nvarchar(32) not null,
 number_of_values_per_second decimal(8,2) constraint ck_number_of_values_per_second CHECK (number_of_values_per_second >= 0.0) not null,
@@ -144,14 +146,14 @@ go
 
 
 -- Which robot which environments can walk through
-create table RobotsToEnvironments(
-robot_id int not null,
-environment_id int not null,
-constraint pk_RobotsToEnvironments primary key(robot_id, environment_id),
-constraint fk_RobotsToEnvironments_Robots foreign key (robot_id) references Robots(id) on delete cascade,
-constraint fk_RobotsToEnvironments_Environments foreign key (environment_id) references Environments(id) on delete cascade
-)
-go
+--create table RobotsToEnvironments(
+--robot_id int not null,
+--environment_id int not null,
+--constraint pk_RobotsToEnvironments primary key(robot_id, environment_id),
+--constraint fk_RobotsToEnvironments_Robots foreign key (robot_id) references Robots(id) on delete cascade,
+--constraint fk_RobotsToEnvironments_Environments foreign key (environment_id) references Environments(id) on delete cascade
+--)
+--go
 --drop table RobotsToEnvironments
 
 
@@ -159,6 +161,7 @@ go
 create table Maps(
 id int identity constraint pk_Maps primary key not null,
 map_data nvarchar(64) not null,
+map_name nvarchar(64) not null,
 denivelation decimal(16,2) not null,
 )
 go
@@ -167,14 +170,14 @@ go
 
 
 -- Which map which environments have
-create table MapsToEnvironments(
-map_id int not null,
-environment_id int not null,
-constraint pk_MapsToEnvironments primary key(map_id, environment_id),
-constraint fk_MapsToEnvironments_Maps foreign key (map_id) references Maps(id) on delete cascade,
-constraint fk_MapsToEnvironments_Environments foreign key (environment_id) references Environments(id) on delete cascade
-)
-go
+--create table MapsToEnvironments(
+--map_id int not null,
+--environment_id int not null,
+--constraint pk_MapsToEnvironments primary key(map_id, environment_id),
+--constraint fk_MapsToEnvironments_Maps foreign key (map_id) references Maps(id) on delete cascade,
+--constraint fk_MapsToEnvironments_Environments foreign key (environment_id) references Environments(id) on delete cascade
+--)
+--go
 --drop table MapsToEnvironments
 
 
@@ -217,12 +220,12 @@ go
 drop table RobotsToRotors
 drop table RobotsToSensors
 drop table RobotsToWheels
-drop table RobotsToEnvironments
+--drop table RobotsToEnvironments
 drop table Rotors
 drop table Sensors
 drop table Wheels
 
-drop table MapsToEnvironments
+--drop table MapsToEnvironments
 
 drop table RoboSimulationsToEnvironments
 drop table RoboSimulationsToRobots
@@ -237,6 +240,13 @@ drop table RoboSimulations
 
 */
 
+
+/*
+insert into 
+
+insert into Wheels (driving, wheel_mesh_grid, wheel_diameter, wheel_width)
+values ('НЕ', 'асд', 10.32, 1203.322)
+
 insert into RoboSimulations (simulation_name, simulation_owner, simulation_owner_email)
 values ('Симулация 1', 'Тони', 'anton@gmail.com')
 
@@ -245,14 +255,9 @@ values ('Симулация 2', 'Тони2', 'anton@gmail.com2')
 
 insert into RoboSimulations (simulation_name, simulation_owner, simulation_owner_email)
 values ('Симулация 3', 'Тони3', 'anton@gmail.com3')
-/*
-insert into 
-
-insert into Wheels (driving, wheel_mesh_grid, wheel_diameter, wheel_width)
-values ('НЕ', 'асд', 10.32, 1203.322)
 
 select * from Wheels
-
+select * from RoboSimulations
 
 
 */

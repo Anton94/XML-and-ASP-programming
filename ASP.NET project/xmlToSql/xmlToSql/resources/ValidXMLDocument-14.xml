@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
-<RoboSimulation id="S0">
-    <SimulationName>Симулация 14</SimulationName>
-    <SimulationOwner>Георги</SimulationOwner>
+<RoboSimulation id="S0" name="Симулация 14" owner="Георги">
     <SimulationOwnerEmail>georgi@gmail.com</SimulationOwnerEmail>
+    <SimulationDescription>Описание на симулация 14</SimulationDescription>
+    <SimulationRating>4.5</SimulationRating>
     <Environments>
         <Environment id="IDE000" name="Земя">
             <TravelCostEnter>1.2</TravelCostEnter>
@@ -20,7 +20,7 @@
     </Environments>
     
     <Robots>
-        <Robot id="IDR000" environments="IDE000 IDE001" name="Робо МИГ20" owner="Барон">
+        <Robot id="IDR000" name="Робо МИГ20" owner="Барон">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>17.0</Speed>
             <SpeedBack>16.3</SpeedBack>
@@ -50,7 +50,7 @@
                 </Sensor>
             </Sensors>
         </Robot>        
-        <Robot id="IDR001" environments="IDE000" name="Робо МИГ3000" owner="Миро">
+        <Robot id="IDR001" name="Робо МИГ3000" owner="Миро">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>19.0</Speed>
             <SpeedBack>19.3</SpeedBack>
@@ -118,7 +118,7 @@
                 </Rotor>
             </Rotors>
         </Robot>        
-        <Robot id="IDR002" environments="IDE001" name="Робо РИБ200" owner="Силвия">
+        <Robot id="IDR002" name="Робо РИБ200" owner="Силвия">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>24.2</Speed>
             <SpeedBack>24.1</SpeedBack>
@@ -159,11 +159,11 @@
     </Robots>
     
     <Maps>
-        <Map id="IDM000" environments="IDE001">
+        <Map id="IDM000" name="Карта 1">
             <MapData>map000.bin</MapData>
             <Denivelation>0</Denivelation>
         </Map>
-        <Map id="IDM001" environments="IDE000 IDE001">
+        <Map id="IDM001" name="Карта 2">
             <MapData>map001.bin</MapData>
             <Denivelation>2</Denivelation>
         </Map>

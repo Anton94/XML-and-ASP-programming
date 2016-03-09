@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
-<RoboSimulation id="S0">
-    <SimulationName>Симулация 8</SimulationName>
-    <SimulationOwner>Антон</SimulationOwner>
+<RoboSimulation id="S0" name="Симулация 8" owner="Влашко">
     <SimulationOwnerEmail>antonvdudov@gmail.com</SimulationOwnerEmail>
+    <SimulationDescription>Описание на симулация 8</SimulationDescription>
+    <SimulationRating>2.5</SimulationRating>
     <Environments>
         <Environment id="IDE000" name="Земя">
             <TravelCostEnter>1.0</TravelCostEnter>
@@ -14,7 +14,7 @@
     </Environments>
     
     <Robots>
-        <Robot id="IDR000" environments="IDE000" name="Робо КЯМ13" owner="Юли">
+        <Robot id="IDR000" name="Робо КЯМ13" owner="Юли">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>22.6</Speed>
             <SpeedBack>22.3</SpeedBack>
@@ -52,7 +52,7 @@
                 </Sensor>
             </Sensors>
         </Robot>                
-        <Robot id="IDR001" environments="IDE000" name="Робо САЯ12" owner="Габи">
+        <Robot id="IDR001" name="Робо САЯ12" owner="Габи">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>23.0</Speed>
             <SpeedBack>23.3</SpeedBack>
@@ -87,7 +87,7 @@
                 </Sensor>
             </Sensors>
         </Robot>          
-        <Robot id="IDR002" environments="IDE000" name="Робо ЛНС12" owner="Петър">
+        <Robot id="IDR002" name="Робо ЛНС12" owner="Петър">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>19.0</Speed>
             <SpeedBack>19.6</SpeedBack>
@@ -123,7 +123,7 @@
             </Rotors>
         </Robot>
         
-        <Robot id="IDR003" environments="IDE000" name="Робо ШЯВС13" owner="Васко">
+        <Robot id="IDR003" name="Робо ШЯВС13" owner="Васко">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>14.2</Speed>
             <SpeedBack>14.7</SpeedBack>
@@ -169,27 +169,27 @@
     </Robots>
     
     <Maps>
-        <Map id="IDM000" environments="IDE000">
+        <Map id="IDM000" name="Карта 1">
             <MapData>map000.bin</MapData>
             <Denivelation>3.1</Denivelation>
         </Map>
-        <Map id="IDM001" environments="IDE000">
+        <Map id="IDM001" name="Карта 2">
             <MapData>map001.bin</MapData>
             <Denivelation>4.2</Denivelation>
         </Map>
-        <Map id="IDM002" environments="IDE000">
+        <Map id="IDM002" name="Карта 3">
             <MapData>map002.bin</MapData>
             <Denivelation>2.7</Denivelation>
         </Map>
-        <Map id="IDM003" environments="IDE000">
+        <Map id="IDM003" name="Карта 4">
             <MapData>map003.bin</MapData>
             <Denivelation>5.9</Denivelation>
         </Map>
-        <Map id="IDM004" environments="IDE000">
+        <Map id="IDM004" name="Карта 5">
             <MapData>map004.bin</MapData>
             <Denivelation>1.5</Denivelation>
         </Map>
-        <Map id="IDM005" environments="IDE000">
+        <Map id="IDM005" name="Карта 6">
             <MapData>map005.bin</MapData>
             <Denivelation>0</Denivelation>
         </Map>

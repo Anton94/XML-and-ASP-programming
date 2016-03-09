@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT RoboSimulation (SimulationName, SimulationOwner, SimulationOwnerEmail, Environments, Robots, Maps, Algorithms)>
-    <!ATTLIST RoboSimulation id ID #REQUIRED >
-    <!ELEMENT SimulationName (#PCDATA)>
-    <!ELEMENT SimulationOwner (#PCDATA)>
+<!ELEMENT RoboSimulation (SimulationOwnerEmail, SimulationDescription, SimulationRating, Environments, Robots, Maps, Algorithms)>
+    <!ATTLIST RoboSimulation id ID #REQUIRED 
+                             name CDATA #REQUIRED
+                             owner CDATA #REQUIRED>
     <!ELEMENT SimulationOwnerEmail (#PCDATA)>
-    <!ELEMENT  Environments (Environment*)>
+    <!ELEMENT SimulationDescription (#PCDATA)>
+    <!ELEMENT SimulationRating (#PCDATA)>    
+    <!ELEMENT Environments (Environment*)>
         <!ELEMENT Environment (TravelCostEnter, TravelCostIn, TravelCostExit, Damage)>
             <!ATTLIST Environment id ID #REQUIRED
                                   name CDATA #REQUIRED>
@@ -15,7 +17,6 @@
     <!ELEMENT Robots (Robot*)>
         <!ELEMENT Robot (RobotMeshGrid, Speed, SpeedBack, TurningSpeed, TurningSpeedBack, Wheels?, Sensors?, Rotors?)>
             <!ATTLIST Robot id ID #REQUIRED
-                            environments IDREFS #REQUIRED
                             name CDATA #REQUIRED
                             owner CDATA #REQUIRED>
             <!ELEMENT RobotMeshGrid (#PCDATA)>
@@ -42,7 +43,7 @@
     <!ELEMENT Maps (Map*)>
         <!ELEMENT Map (MapData, Denivelation)>
             <!ATTLIST Map id ID #REQUIRED
-                          environments IDREFS #REQUIRED>
+                          name CDATA #REQUIRED>
             <!ELEMENT MapData (#PCDATA)>
             <!ELEMENT Denivelation (#PCDATA)>
     <!ELEMENT Algorithms (Algorithm*)>

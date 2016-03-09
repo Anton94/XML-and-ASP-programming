@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
-<RoboSimulation id="S0">
-    <SimulationName>Симулация 12</SimulationName>
-    <SimulationOwner>Берго</SimulationOwner>
-    <SimulationOwnerEmail>bergo@gmail.com</SimulationOwnerEmail>
+<RoboSimulation id="S0" name="Симулация 12" owner="Берго">
+    <SimulationOwnerEmail>bergo@gmail.com</SimulationOwnerEmail>    
+    <SimulationDescription>Описание на симулация 12</SimulationDescription>
+    <SimulationRating>4.5</SimulationRating>
     <Environments>
         <Environment id="IDE000" name="Вода">
             <TravelCostEnter>1.0</TravelCostEnter>
@@ -20,7 +20,7 @@
     </Environments>
     
     <Robots>
-        <Robot id="IDR000" environments="IDE000 IDE001" name="Робо МЛ50002" owner="Виви">
+        <Robot id="IDR000" name="Робо МЛ50002" owner="Виви">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>18.6</Speed>
             <SpeedBack>18.4</SpeedBack>
@@ -73,7 +73,7 @@
                 </Rotor>
             </Rotors>
         </Robot>
-        <Robot id="IDR001" environments="IDE001" name="Робо ОЯ200" owner="Маринела">
+        <Robot id="IDR001" name="Робо ОЯ200" owner="Маринела">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>5.0</Speed>
             <SpeedBack>5.4</SpeedBack>
@@ -103,7 +103,7 @@
                 </Rotor>
             </Rotors>
         </Robot>
-        <Robot id="IDR002" environments="IDE001" name="Робо ОИ12" owner="Боби">
+        <Robot id="IDR002" name="Робо ОИ12" owner="Боби">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>9.0</Speed>
             <SpeedBack>8.6</SpeedBack>
@@ -155,15 +155,15 @@
     </Robots>
     
     <Maps>
-        <Map id="IDM000" environments="IDE000 IDE001">
+        <Map id="IDM000" name="Карта 1">
             <MapData>map000.bin</MapData>
             <Denivelation>4</Denivelation>
         </Map>
-        <Map id="IDM001" environments="IDE000">
+        <Map id="IDM001" name="Карта 2">
             <MapData>map001.bin</MapData>
             <Denivelation>0</Denivelation>
         </Map>
-        <Map id="IDM002" environments="IDE001">
+        <Map id="IDM002" name="Карта 3">
             <MapData>map002.bin</MapData>
             <Denivelation>10</Denivelation>
         </Map>

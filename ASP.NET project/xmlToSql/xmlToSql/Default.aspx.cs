@@ -9,14 +9,16 @@ namespace xmlToSql
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private string DirPath;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             xmlToSql.Program.Init();
+            DirPath = @"C:\Users\Anton\Documents\Visual Studio 2013\Projects\XML-and-ASP.NET-programming\ASP.NET project\xmlToSql\xmlToSql\resources";
         }
 
         protected void ButtonAddXMLFiles_Click(object sender, EventArgs e)
-        {
-            string DirPath = @"C:\Users\Anton\Documents\Visual Studio 2013\Projects\XML-and-ASP.NET-programming\ASP.NET project\xmlToSql\xmlToSql\resources";
+        {            
             xmlToSql.Program.InsertXmlDataToDB(DirPath);
             // Updates the grid veiw after adding the new data
             GridView1.DataBind();
@@ -54,5 +56,14 @@ namespace xmlToSql
             GridView7.AllowPaging = !GridView7.AllowPaging;
             GridView8.AllowPaging = !GridView8.AllowPaging;
         }
+
+        protected void ButtonValidate_Click(object sender, EventArgs e)
+        {
+            string statusValidation = "";
+            xmlToSql.Program.ValidateXMLFiles(DirPath, ref statusValidation);
+            TextBoxValidationStatus.Text = statusValidation;
+        }
     }
+
+
 }

@@ -63,14 +63,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="App_Data\ASP programming.mdf" />
+    <Content Include="App_Data\ASP programming_log.ldf">
+      <DependentUpon>ASP programming.mdf</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
     <Content Include="resources\RoboSim.dtd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -80,19 +84,34 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ASP programming.mdf" />
-    <Content Include="App_Data\ASP programming_log.ldf">
-      <DependentUpon>ASP programming.mdf</DependentUpon>
-    </Content>
-    <Content Include="resources\test.xml" />
+    <Content Include="resources\ValidXMLDocument-1.xml" />
+    <Content Include="resources\ValidXMLDocument-10.xml" />
+    <Content Include="resources\ValidXMLDocument-11.xml" />
+    <Content Include="resources\ValidXMLDocument-12.xml" />
+    <Content Include="resources\ValidXMLDocument-13.xml" />
+    <Content Include="resources\ValidXMLDocument-14.xml" />
+    <Content Include="resources\ValidXMLDocument-15.xml" />
+    <Content Include="resources\ValidXMLDocument-16.xml" />
+    <Content Include="resources\ValidXMLDocument-17.xml" />
+    <Content Include="resources\ValidXMLDocument-18.xml" />
+    <Content Include="resources\ValidXMLDocument-19.xml" />
+    <Content Include="resources\ValidXMLDocument-2.xml" />
+    <Content Include="resources\ValidXMLDocument-20.xml" />
+    <Content Include="resources\ValidXMLDocument-3.xml" />
+    <Content Include="resources\ValidXMLDocument-4.xml" />
+    <Content Include="resources\ValidXMLDocument-5.xml" />
+    <Content Include="resources\ValidXMLDocument-6.xml" />
+    <Content Include="resources\ValidXMLDocument-7.xml" />
+    <Content Include="resources\ValidXMLDocument-8.xml" />
+    <Content Include="resources\ValidXMLDocument-9.xml" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Designer.cs">
+    <Compile Include="Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +125,8 @@
     <Compile Include="RoboSimulationElements.cs" />
     <Compile Include="XMLProcessorLINQ.cs" />
     <Compile Include="XMLRoboSimulationProcessor.cs" />
+    <Compile Include="XMLRoboSimulationProcessorExeption.cs" />
+    <Compile Include="XMLValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

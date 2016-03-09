@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE RoboSimulation SYSTEM "RoboSim.dtd">
-<RoboSimulation id="S0">
-    <SimulationName>Симулация 6</SimulationName>
-    <SimulationOwner>Валери</SimulationOwner>
+<RoboSimulation id="S0" name="Симулация 6" owner="Валери">
     <SimulationOwnerEmail>valeri@gmail.com</SimulationOwnerEmail>
+    <SimulationDescription>Описание на симулация 6</SimulationDescription>
+    <SimulationRating>5.2</SimulationRating>
     <Environments>
         <Environment id="IDE000" name="Вода">
             <TravelCostEnter>1.0</TravelCostEnter>
@@ -26,7 +26,7 @@
     </Environments>
     
     <Robots>
-        <Robot id="IDR000" environments="IDE000 IDE002" name="Робо М2000" owner="Мирела">
+        <Robot id="IDR000" name="Робо М2000" owner="Мирела">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>13.6</Speed>
             <SpeedBack>16.4</SpeedBack>
@@ -79,7 +79,7 @@
                 </Rotor>
             </Rotors>
         </Robot>
-        <Robot id="IDR001" environments="IDE000 IDE001" name="Робо 60" owner="Милко">
+        <Robot id="IDR001" name="Робо 60" owner="Милко">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>13.1</Speed>
             <SpeedBack>13.6</SpeedBack>
@@ -114,7 +114,7 @@
                 </Rotor>
             </Rotors>
         </Robot>
-        <Robot id="IDR002" environments="IDE002" name="Робо МК20" owner="Фали">
+        <Robot id="IDR002" name="Робо МК20" owner="Фали">
             <RobotMeshGrid>mesh.obj</RobotMeshGrid>
             <Speed>19.0</Speed>
             <SpeedBack>18.6</SpeedBack>
@@ -144,11 +144,11 @@
     </Robots>
     
     <Maps>
-        <Map id="IDM000" environments="IDE000 IDE001 IDE002">
+        <Map id="IDM000" name="Карта 1">
             <MapData>map000.bin</MapData>
             <Denivelation>14</Denivelation>
         </Map>
-        <Map id="IDM001" environments="IDE002">
+        <Map id="IDM001" name="Карта 2">
             <MapData>map001.bin</MapData>
             <Denivelation>7</Denivelation>
         </Map>

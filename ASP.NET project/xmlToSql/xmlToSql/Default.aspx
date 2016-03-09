@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:Button ID="ButtonValidate" runat="server" OnClick="ButtonValidate_Click" Text="Валидирай документите" />
     <add name=“ASP.NET v4.0“ autoStart=“true“ managedRuntimeVersion=“v4.0“ managedPipelineMode=“Integrated“>
    
     
@@ -16,6 +17,13 @@
         <asp:Button ID="ButtonDeleteAllData" runat="server" OnClick="ButtonDeleteAllData_Click" Text="Изтрий информацията" Width="174px" />
         <br />
         <asp:Button ID="ButtonChangeTablesPaging" runat="server" OnClick="ButtonChangeTablesPaging_Click" Text="Смени формата на таблиците(всички на една или на повече)" />
+        <br />
+        <br />
+        <asp:Label ID="Label8" runat="server" Text="Статус на валдацията"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBoxValidationStatus" runat="server" Height="283px" MaxLength="65000" Rows="1000" TextMode="MultiLine" Width="827px"></asp:TextBox>
+        <br />
+        <br />
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" Text="Симулации"></asp:Label>
@@ -26,6 +34,8 @@
                 <asp:BoundField DataField="simulation_name" HeaderText="simulation_name" SortExpression="simulation_name" />
                 <asp:BoundField DataField="simulation_owner" HeaderText="simulation_owner" SortExpression="simulation_owner" />
                 <asp:BoundField DataField="simulation_owner_email" HeaderText="simulation_owner_email" SortExpression="simulation_owner_email" />
+                <asp:BoundField DataField="simulation_description" HeaderText="simulation_description" SortExpression="simulation_description" />
+                <asp:BoundField DataField="simulation_rating" HeaderText="simulation_rating" SortExpression="simulation_rating" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -38,7 +48,7 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="RoboSimulationSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT * FROM [RoboSimulations] ORDER BY [id]">
+        <asp:SqlDataSource ID="RoboSimulationSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT * FROM [RoboSimulations] ORDER BY [id]">
         </asp:SqlDataSource>
     
         <br />
@@ -66,7 +76,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="EnvironmentSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация , E.id, E.name, E.travel_cost_enter, E.travel_cost_in, E.travel_cost_exit, E.damage FROM Environments AS E INNER JOIN RoboSimulationsToEnvironments AS RTE ON E.id = RTE.environment_id INNER JOIN RoboSimulations AS RS ON RS.id = RTE.robo_simulation_id ORDER BY Симулация"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="EnvironmentSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация , E.id, E.name, E.travel_cost_enter, E.travel_cost_in, E.travel_cost_exit, E.damage FROM Environments AS E INNER JOIN RoboSimulationsToEnvironments AS RTE ON E.id = RTE.environment_id INNER JOIN RoboSimulations AS RS ON RS.id = RTE.robo_simulation_id ORDER BY Симулация"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label3" runat="server" Text="Роботи"></asp:Label>
         <asp:GridView ID="GridView3" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="RobotSqlDataSource" ForeColor="#333333" GridLines="None">
@@ -94,7 +104,7 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="RobotSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация , R.id, R.name, R.owner, R.robot_mesh_grid, R.speed, R.speed_back, R.turning_speed, R.turning_speed_back FROM RoboSimulations AS RS INNER JOIN RoboSimulationsToRobots AS RSTR ON RS.id = RSTR.robo_simulation_id INNER JOIN Robots AS R ON RSTR.robot_id = R.id
+        <asp:SqlDataSource ID="RobotSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация , R.id, R.name, R.owner, R.robot_mesh_grid, R.speed, R.speed_back, R.turning_speed, R.turning_speed_back FROM RoboSimulations AS RS INNER JOIN RoboSimulationsToRobots AS RSTR ON RS.id = RSTR.robo_simulation_id INNER JOIN Robots AS R ON RSTR.robot_id = R.id
 ORDER BY RS.id"></asp:SqlDataSource>
         <br />
         Колела<br />
@@ -122,7 +132,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="WheelSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Wheels.id, Wheels.driving, Wheels.wheel_mesh_grid, Wheels.wheel_diameter, Wheels.wheel_width FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToWheels ON Robots.id = RobotsToWheels.robot_id INNER JOIN Wheels ON Wheels.id = RobotsToWheels.wheel_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="WheelSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Wheels.id, Wheels.driving, Wheels.wheel_mesh_grid, Wheels.wheel_diameter, Wheels.wheel_width FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToWheels ON Robots.id = RobotsToWheels.robot_id INNER JOIN Wheels ON Wheels.id = RobotsToWheels.wheel_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label4" runat="server" Text="Сензори"></asp:Label>
         <asp:GridView ID="GridView5" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SensorsSqlDataSource" ForeColor="#333333" GridLines="None">
@@ -149,7 +159,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SensorsSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Sensors.id, Sensors.name, Sensors.value_type, Sensors.sensor_mesh_grid, Sensors.number_of_values_per_second FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToSensors ON Robots.id = RobotsToSensors.robot_id INNER JOIN Sensors ON Sensors.id = RobotsToSensors.sensor_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SensorsSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Sensors.id, Sensors.name, Sensors.value_type, Sensors.sensor_mesh_grid, Sensors.number_of_values_per_second FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToSensors ON Robots.id = RobotsToSensors.robot_id INNER JOIN Sensors ON Sensors.id = RobotsToSensors.sensor_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label5" runat="server" Text="Ротори"></asp:Label>
         <br />
@@ -175,7 +185,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="RotorsSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Rotors.id, Rotors.rotor_mesh_grid, Rotors.rotor_lifting_power FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToRotors ON Robots.id = RobotsToRotors.robot_id INNER JOIN Rotors ON Rotors.id = RobotsToRotors.rotor_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="RotorsSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RoboSimulations.id AS СимID, RoboSimulations.simulation_name AS Симулация, Robots.id AS РобоID, Robots.name AS Робот, Rotors.id, Rotors.rotor_mesh_grid, Rotors.rotor_lifting_power FROM RoboSimulations INNER JOIN RoboSimulationsToRobots ON RoboSimulations.id = RoboSimulationsToRobots.robo_simulation_id INNER JOIN Robots ON Robots.id = RoboSimulationsToRobots.robot_id INNER JOIN RobotsToRotors ON Robots.id = RobotsToRotors.robot_id INNER JOIN Rotors ON Rotors.id = RobotsToRotors.rotor_id ORDER BY СимID, РобоID"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label6" runat="server" Text="Карти"></asp:Label>
         <br />
@@ -185,6 +195,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
                 <asp:BoundField DataField="СимID" HeaderText="СимID" InsertVisible="False" ReadOnly="True" SortExpression="СимID" />
                 <asp:BoundField DataField="Симулация" HeaderText="Симулация" SortExpression="Симулация" />
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                <asp:BoundField DataField="map_name" HeaderText="map_name" SortExpression="map_name" />
                 <asp:BoundField DataField="map_data" HeaderText="map_data" SortExpression="map_data" />
                 <asp:BoundField DataField="denivelation" HeaderText="denivelation" SortExpression="denivelation" />
             </Columns>
@@ -199,7 +210,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="MapSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация, М.id, М.map_data, М.denivelation FROM Maps AS М INNER JOIN RoboSimulationsToMaps AS RTE ON М.id = RTE.map_id INNER JOIN RoboSimulations AS RS ON RS.id = RTE.robo_simulation_id ORDER BY СимID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="MapSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация, М.id, М.map_name, М.map_data, М.denivelation FROM Maps AS М INNER JOIN RoboSimulationsToMaps AS RTE ON М.id = RTE.map_id INNER JOIN RoboSimulations AS RS ON RS.id = RTE.robo_simulation_id ORDER BY СимID"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label7" runat="server" Text="Алгоритми"></asp:Label>
         <br />
@@ -226,7 +237,7 @@ ORDER BY RS.id"></asp:SqlDataSource>
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="AlgorithmSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASP programmingConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация, A.id, A.name, A.diffEnvironments, A.multipleDestPoints, A.complexity, A.depth FROM Algorithms AS A INNER JOIN RoboSimulationsToAlgorithms AS RTA ON A.id = RTA.algorithm_id INNER JOIN RoboSimulations AS RS ON RS.id = RTA.robo_simulation_id ORDER BY СимID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="AlgorithmSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPConnectionString %>" SelectCommand="SELECT RS.id AS СимID, RS.simulation_name AS Симулация, A.id, A.name, A.diffEnvironments, A.multipleDestPoints, A.complexity, A.depth FROM Algorithms AS A INNER JOIN RoboSimulationsToAlgorithms AS RTA ON A.id = RTA.algorithm_id INNER JOIN RoboSimulations AS RS ON RS.id = RTA.robo_simulation_id ORDER BY СимID"></asp:SqlDataSource>
     
     </div>
         <p>

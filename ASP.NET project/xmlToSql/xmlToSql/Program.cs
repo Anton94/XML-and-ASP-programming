@@ -15,12 +15,12 @@ namespace xmlToSql
 {
     class Program
     {
-        static ASP_programmingEntities entities;
+        static ASP_programmingEntities1 entities;
         
 
         public static void Init()
         {
-            entities = new ASP_programmingEntities();
+            entities = new ASP_programmingEntities1();
         }
 
         #region insert robo simulation into the DB
@@ -37,24 +37,58 @@ namespace xmlToSql
         public static void InsertXmlDataToDB(string dir)
         {
             XMLRoboSimulationProcessor processor = new XMLRoboSimulationProcessor();
-            //XMLProcessorLINQ processor = new XMLProcessorLINQ();
 
             string[] files = Directory.GetFiles(dir, "*.xml", SearchOption.AllDirectories);
             foreach (string file in files)
             {
-                //try
+                try
                 {
                     processor.LoadBookstoreFromXMLUsingReader(file);
                     RoboSimulation roboSimulation = processor.RoboSimulation;
                     InsertRoboSimulationToDB(roboSimulation);
                 }
-                //catch (XMLBookstoreProcessorException pe)
+                catch (XMLRoboSimulationProcessorException pe)
                 {
-                    //Console.WriteLine(pe.Message);
+                    Console.WriteLine(pe.Message);
                 }
             }
         }
         #endregion
+
+
+        #region validate XML files
+        /*validate the XML files*/
+        public static void ValidateXMLFiles(string dir, ref string statusText)
+        {
+            XMLRoboSimulationProcessor processor = new XMLRoboSimulationProcessor();
+            string[] byDirPaths;
+            string[] files = Directory.GetFiles(dir, "*.xml", SearchOption.AllDirectories);
+            foreach (string file in files)
+            {
+                //statusText += "Валидирам файл [" + file + "] - ";
+                byDirPaths = file.Split('\\');
+                statusText += "Валидирам файл [" + byDirPaths.Last() + "] - ";
+                try
+                {
+                    processor.validateDTDFile(file);
+                    statusText += "валиден!";
+                }
+                catch (XMLRoboSimulationProcessorException pe)
+                {
+                    statusText += "не е валиден!\n";
+                    statusText += "Грешка: " + pe.Message;
+                }
+                catch (XmlSchemaValidationException xsve)
+                {
+                    statusText += "не е валиден!\n";
+                    statusText += "Грешка в данните: " + xsve.Message;
+                }
+                statusText += "\n\n";
+            }
+        }
+        #endregion
+
+
 
 
 
@@ -76,7 +110,7 @@ namespace xmlToSql
         public static void Main(string[] args)
         {
             string DirPath = @"\resources\";
-            entities = new ASP_programmingEntities();
+            entities = new ASP_programmingEntities1();
          
 
             /*inserts xml files' data into the DB*/

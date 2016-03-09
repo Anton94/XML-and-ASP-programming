@@ -13,10 +13,8 @@ namespace xmlToSql
         public static string XML_VERSION = "1.0";
         public static string XML_ENCODING = "utf-8";
         public static string ROBOSIMULATION_ID = "id";
-        public static string ROBOSIMULATION_NAME = "SimulationName";
-        public static string ROBOSIMULATION_NAME_XPATH = ROOT_ELEMENT_XPATH + "/SimulationName";
-        public static string ROBOSIMULATION_OWNER = "SimulationOwner";
-        public static string ROBOSIMULATION_OWNER_XPATH = ROOT_ELEMENT_XPATH + "/SimulationOwner";
+        public static string ROBOSIMULATION_NAME = "name";
+        public static string ROBOSIMULATION_OWNER = "owner";
         public static string ROBOSIMULATION_OWNEREMAIL = "SimulationOwnerEmail";
         public static string ROBOSIMULATION_OWNEREMAIL_XPATH = ROOT_ELEMENT_XPATH + "/SimulationOwnerEmail";
         
@@ -97,6 +95,7 @@ namespace xmlToSql
         public static string ROBOSIMULATION_MAP = "Map";
         public static string ROBOSIMULATION_MAP_XPATH = ROBOSIMULATION_MAPS_XPATH + "/Map";
         public static string ROBOSIMULATION_MAP_ID = "id";
+        public static string ROBOSIMULATION_MAP_NAME = "name";
         public static string ROBOSIMULATION_MAP_ENVIRONMENTS = "environments";
         public static string ROBOSIMULATION_MAPDATA = "MapData";
         public static string ROBOSIMULATION_MAPDATA_XPATH = ROBOSIMULATION_MAP_XPATH + "/MapData";
