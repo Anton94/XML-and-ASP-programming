@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Algorithm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diffEnvironments" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="multipleDestPoints" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="complexity" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="depth" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RoboSimulations" Relationship="Self.RoboSimulationsToAlgorithms" FromRole="Algorithms" ToRole="RoboSimulations" />
+  </EntityType>
+  <EntityType Name="Environment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="travel_cost_enter" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="travel_cost_in" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="travel_cost_exit" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="damage" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="RoboSimulations" Relationship="Self.RoboSimulationsToEnvironments" FromRole="Environments" ToRole="RoboSimulations" />
+  </EntityType>
+  <EntityType Name="Map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="map_data" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="map_name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="denivelation" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="RoboSimulations" Relationship="Self.RoboSimulationsToMaps" FromRole="Maps" ToRole="RoboSimulations" />
+  </EntityType>
+  <EntityType Name="RoboSimulation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="simulation_name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="simulation_owner" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="simulation_owner_email" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="simulation_description" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="simulation_rating" Type="Decimal" Precision="16" Scale="2" />
+    <NavigationProperty Name="Algorithms" Relationship="Self.RoboSimulationsToAlgorithms" FromRole="RoboSimulations" ToRole="Algorithms" />
+    <NavigationProperty Name="Environments" Relationship="Self.RoboSimulationsToEnvironments" FromRole="RoboSimulations" ToRole="Environments" />
+    <NavigationProperty Name="Maps" Relationship="Self.RoboSimulationsToMaps" FromRole="RoboSimulations" ToRole="Maps" />
+    <NavigationProperty Name="Robots" Relationship="Self.RoboSimulationsToRobots" FromRole="RoboSimulations" ToRole="Robots" />
+  </EntityType>
+  <EntityType Name="Robot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="owner" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="robot_mesh_grid" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="speed" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="speed_back" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="turning_speed" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="turning_speed_back" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="RoboSimulations" Relationship="Self.RoboSimulationsToRobots" FromRole="Robots" ToRole="RoboSimulations" />
+    <NavigationProperty Name="Rotors" Relationship="Self.RobotsToRotors" FromRole="Robots" ToRole="Rotors" />
+    <NavigationProperty Name="Sensors" Relationship="Self.RobotsToSensors" FromRole="Robots" ToRole="Sensors" />
+    <NavigationProperty Name="Wheels" Relationship="Self.RobotsToWheels" FromRole="Robots" ToRole="Wheels" />
+  </EntityType>
+  <EntityType Name="Rotor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rotor_mesh_grid" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rotor_lifting_power" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Robots" Relationship="Self.RobotsToRotors" FromRole="Rotors" ToRole="Robots" />
+  </EntityType>
+  <EntityType Name="Sensor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="value_type" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sensor_mesh_grid" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="number_of_values_per_second" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Robots" Relationship="Self.RobotsToSensors" FromRole="Sensors" ToRole="Robots" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Wheel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="driving" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="wheel_mesh_grid" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="wheel_diameter" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="wheel_width" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Robots" Relationship="Self.RobotsToWheels" FromRole="Wheels" ToRole="Robots" />
+  </EntityType>
+  <Association Name="RoboSimulationsToAlgorithms">
+    <End Role="Algorithms" Type="Self.Algorithm" Multiplicity="*" />
+    <End Role="RoboSimulations" Type="Self.RoboSimulation" Multiplicity="*" />
+  </Association>
+  <Association Name="RoboSimulationsToEnvironments">
+    <End Role="Environments" Type="Self.Environment" Multiplicity="*" />
+    <End Role="RoboSimulations" Type="Self.RoboSimulation" Multiplicity="*" />
+  </Association>
+  <Association Name="RoboSimulationsToMaps">
+    <End Role="Maps" Type="Self.Map" Multiplicity="*" />
+    <End Role="RoboSimulations" Type="Self.RoboSimulation" Multiplicity="*" />
+  </Association>
+  <Association Name="RoboSimulationsToRobots">
+    <End Role="RoboSimulations" Type="Self.RoboSimulation" Multiplicity="*" />
+    <End Role="Robots" Type="Self.Robot" Multiplicity="*" />
+  </Association>
+  <Association Name="RobotsToRotors">
+    <End Role="Robots" Type="Self.Robot" Multiplicity="*" />
+    <End Role="Rotors" Type="Self.Rotor" Multiplicity="*" />
+  </Association>
+  <Association Name="RobotsToSensors">
+    <End Role="Robots" Type="Self.Robot" Multiplicity="*" />
+    <End Role="Sensors" Type="Self.Sensor" Multiplicity="*" />
+  </Association>
+  <Association Name="RobotsToWheels">
+    <End Role="Robots" Type="Self.Robot" Multiplicity="*" />
+    <End Role="Wheels" Type="Self.Wheel" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ASP_programmingEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Algorithms" EntityType="Self.Algorithm" />
+    <EntitySet Name="Environments" EntityType="Self.Environment" />
+    <EntitySet Name="Maps" EntityType="Self.Map" />
+    <EntitySet Name="RoboSimulations" EntityType="Self.RoboSimulation" />
+    <EntitySet Name="Robots" EntityType="Self.Robot" />
+    <EntitySet Name="Rotors" EntityType="Self.Rotor" />
+    <EntitySet Name="Sensors" EntityType="Self.Sensor" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Wheels" EntityType="Self.Wheel" />
+    <AssociationSet Name="RoboSimulationsToAlgorithms" Association="Self.RoboSimulationsToAlgorithms">
+      <End Role="Algorithms" EntitySet="Algorithms" />
+      <End Role="RoboSimulations" EntitySet="RoboSimulations" />
+    </AssociationSet>
+    <AssociationSet Name="RoboSimulationsToEnvironments" Association="Self.RoboSimulationsToEnvironments">
+      <End Role="Environments" EntitySet="Environments" />
+      <End Role="RoboSimulations" EntitySet="RoboSimulations" />
+    </AssociationSet>
+    <AssociationSet Name="RoboSimulationsToMaps" Association="Self.RoboSimulationsToMaps">
+      <End Role="Maps" EntitySet="Maps" />
+      <End Role="RoboSimulations" EntitySet="RoboSimulations" />
+    </AssociationSet>
+    <AssociationSet Name="RoboSimulationsToRobots" Association="Self.RoboSimulationsToRobots">
+      <End Role="RoboSimulations" EntitySet="RoboSimulations" />
+      <End Role="Robots" EntitySet="Robots" />
+    </AssociationSet>
+    <AssociationSet Name="RobotsToRotors" Association="Self.RobotsToRotors">
+      <End Role="Robots" EntitySet="Robots" />
+      <End Role="Rotors" EntitySet="Rotors" />
+    </AssociationSet>
+    <AssociationSet Name="RobotsToSensors" Association="Self.RobotsToSensors">
+      <End Role="Robots" EntitySet="Robots" />
+      <End Role="Sensors" EntitySet="Sensors" />
+    </AssociationSet>
+    <AssociationSet Name="RobotsToWheels" Association="Self.RobotsToWheels">
+      <End Role="Robots" EntitySet="Robots" />
+      <End Role="Wheels" EntitySet="Wheels" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
