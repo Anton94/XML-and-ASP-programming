@@ -39,7 +39,7 @@ namespace xmlToSql
        
 
         //reader using
-        public bool LoadBookstoreFromXMLUsingReader(string path)
+        public bool LoadRoboSimulationFromXMLUsingReader(string path)
         {
             this.path = path;
 

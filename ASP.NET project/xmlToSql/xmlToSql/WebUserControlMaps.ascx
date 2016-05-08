@@ -26,7 +26,7 @@
                     <asp:Label ID="LabelMapName" runat="server" AssociatedControlID="TextBoxMapName" Text="Име на картата: *"></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="TextBoxMapName" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxMapName" runat="server" Width="178px" OnTextChanged="TextBoxMap_TextChanged"></asp:TextBox>
                 </td>
                 <td class="auto-style6">
                     <asp:Label ID="LabelMapNameError" runat="server" AssociatedControlID="TextBoxMapName" ForeColor="#FF5050"></asp:Label>
@@ -37,7 +37,7 @@
                     <asp:Label ID="LabelMapMapData" runat="server" AssociatedControlID="TextBoxMapMapData" Text="Файл: *"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBoxMapMapData" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxMapMapData" runat="server" Width="178px" OnTextChanged="TextBoxMap_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LabelMapMapDataError" runat="server" AssociatedControlID="TextBoxMapMapData" ForeColor="#FF5050"></asp:Label>
@@ -48,7 +48,7 @@
                     <asp:Label ID="LabelMapDenivelation" runat="server" AssociatedControlID="TextBoxMapDenivelation" Text="Денивелация: *"></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="TextBoxMapDenivelation" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxMapDenivelation" runat="server" Width="178px" OnTextChanged="TextBoxMap_TextChanged"></asp:TextBox>
                 </td>
                 <td class="auto-style6">
                     <asp:Label ID="LabelMapDenivelationError" runat="server" AssociatedControlID="TextBoxMapDenivelation" ForeColor="#FF5050"></asp:Label>

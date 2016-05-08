@@ -63,11 +63,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddXMLFiles.aspx" />
     <Content Include="App_Data\ASP programming.mdf" />
     <Content Include="App_Data\ASP programming_log.ldf">
       <DependentUpon>ASP programming.mdf</DependentUpon>
     </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="EnterData.aspx" />
     <Content Include="packages.config" />
+    <Content Include="resources\profile_pic.jpg" />
+    <Content Include="WebUserControlAlgorithms.ascx" />
+    <Content Include="WebUserControlEnvironments.ascx" />
+    <Content Include="WebUserControlMaps.ascx" />
+    <Content Include="WebUserControlRobots.ascx" />
+    <Content Include="WebUserControlRotors.ascx" />
+    <Content Include="WebUserControlSensors.ascx" />
+    <Content Include="WebUserControlWheels.ascx" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -75,7 +86,10 @@
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="resources\RoboSim.dtd" />
+    <Content Include="resources\RoboSim.dtd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="resources\Generated\RoboSim.dtd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,16 +119,16 @@
     <Content Include="resources\ValidXMLDocument-8.xml" />
     <Content Include="resources\ValidXMLDocument-9.xml" />
     <Content Include="Web.config" />
-    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Compile Include="AddXMLFiles.aspx.cs">
+      <DependentUpon>AddXMLFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AddXMLFiles.aspx.designer.cs">
+      <DependentUpon>AddXMLFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataEventArgs.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,8 +136,71 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EnterData.aspx.cs">
+      <DependentUpon>EnterData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterData.aspx.designer.cs">
+      <DependentUpon>EnterData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoboSimulationElements.cs" />
-    <Compile Include="XMLProcessorLINQ.cs" />
+    <Compile Include="Utiliy.cs" />
+    <Compile Include="WebUserControlAlgorithms.ascx.cs">
+      <DependentUpon>WebUserControlAlgorithms.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlAlgorithms.ascx.designer.cs">
+      <DependentUpon>WebUserControlAlgorithms.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlData.cs" />
+    <Compile Include="WebUserControlEnvironments.ascx.cs">
+      <DependentUpon>WebUserControlEnvironments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlEnvironments.ascx.designer.cs">
+      <DependentUpon>WebUserControlEnvironments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlMaps.ascx.cs">
+      <DependentUpon>WebUserControlMaps.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlMaps.ascx.designer.cs">
+      <DependentUpon>WebUserControlMaps.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRobots.ascx.cs">
+      <DependentUpon>WebUserControlRobots.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRobots.ascx.designer.cs">
+      <DependentUpon>WebUserControlRobots.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlRotors.ascx.cs">
+      <DependentUpon>WebUserControlRotors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlRotors.ascx.designer.cs">
+      <DependentUpon>WebUserControlRotors.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlSensors.ascx.cs">
+      <DependentUpon>WebUserControlSensors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlSensors.ascx.designer.cs">
+      <DependentUpon>WebUserControlSensors.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlWheels.ascx.cs">
+      <DependentUpon>WebUserControlWheels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlWheels.ascx.designer.cs">
+      <DependentUpon>WebUserControlWheels.ascx</DependentUpon>
+    </Compile>
     <Compile Include="XMLRoboSimulationProcessor.cs" />
     <Compile Include="XMLRoboSimulationProcessorExeption.cs" />
     <Compile Include="XMLValidator.cs" />

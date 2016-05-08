@@ -7,30 +7,46 @@ using System.Web.UI.WebControls;
 
 namespace xmlToSql
 {
+
     public partial class WebUserControlEnvironments : System.Web.UI.UserControl
     {
         private Utility utilities;
 
-        public event EventHandler UserControlButtonClicked;
-
-        public bool EventHandlerSeted()
+        private WebUserControlEnvironmentsData data; // Keeps the data of the fields
+        public WebUserControlEnvironmentsData Data
         {
-            return UserControlButtonClicked != null;
+            get { return data; }
         }
-        
 
-        private void OnUserControlButtonClick()
+        public event EventHandler UserControlButtonRemoveClicked;
+        public event EventHandler UserControlFieldChanged;
+
+        #region Event Handlers
+
+        private void OnUserControlButtonRemoveClick()
         {
-            if (EventHandlerSeted())
+            if (UserControlButtonRemoveClicked != null)
             {
-                UserControlButtonClicked(this, EventArgs.Empty);
+                UserControlButtonRemoveClicked(this, EventArgs.Empty);
             }
         }
 
+        private void OnUserControlFieldChanged()
+        {
+            if (UserControlFieldChanged != null)
+            {
+                EnvironmentDataEventArgs dataEventArgs = new EnvironmentDataEventArgs(data);
+                UserControlFieldChanged(this, dataEventArgs);
+            }
+        }
+
+        #endregion
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (utilities == null)
-                utilities = new Utility();
+            utilities = new Utility();
+            SaveData();
         }
 
         public bool Validate()
@@ -79,6 +95,9 @@ namespace xmlToSql
             else
                 LabelEnvironmentDamageError.Text = "";
 
+            SaveData();
+            OnUserControlFieldChanged(); // Send the information to parent page
+
             return result;
         }
 
@@ -92,6 +111,7 @@ namespace xmlToSql
             }
             else
             {
+                en = new Environment();
                 en.name = TextBoxEnvironmentName.Text;
                 en.travel_cost_enter = Decimal.Parse(TextBoxEnvironmentCostEnter.Text);
                 en.travel_cost_in = Decimal.Parse(TextBoxEnvironmentCostIn.Text);
@@ -102,24 +122,8 @@ namespace xmlToSql
 
         public void ButtonRemove_Click(object sender, EventArgs e)
         {
-            OnUserControlButtonClick(); // So the parent page will remove it from it`s lists....
+            OnUserControlButtonRemoveClick(); // So the parent page will remove it from it`s lists....
         }
-        
-        public void setValues(WebUserControlEnvironments other)
-        {
-            TextBoxEnvironmentName.Text = other.TextBoxEnvironmentName.Text;
-            TextBoxEnvironmentCostEnter.Text = other.TextBoxEnvironmentCostEnter.Text;
-            TextBoxEnvironmentCostIn.Text = other.TextBoxEnvironmentCostIn.Text;
-            TextBoxEnvironmentCostExit.Text = other.TextBoxEnvironmentCostExit.Text;
-            TextBoxEnvironmentDamage.Text = other.TextBoxEnvironmentDamage.Text;
-
-            LabelEnvironmentNameError.Text = other.LabelEnvironmentNameError.Text;
-            LabelEnvironmentCostEnterError.Text = other.LabelEnvironmentCostEnterError.Text;
-            LabelEnvironmentCostInError.Text = other.LabelEnvironmentCostInError.Text;
-            LabelEnvironmentCostExitError.Text = other.LabelEnvironmentCostExitError.Text;
-            LabelEnvironmentDamageError.Text = other.LabelEnvironmentDamageError.Text;
-        }
-
         // Clears the fields data.
 
         public void ButtonClearData_Click(object sender, EventArgs e)
@@ -135,6 +139,50 @@ namespace xmlToSql
             LabelEnvironmentCostInError.Text = "";
             LabelEnvironmentCostExitError.Text = "";
             LabelEnvironmentDamageError.Text = "";
+        }
+
+        // If the text box field is changed -> keep the new data
+        protected void TextBoxEnvironment_TextChanged(object sender, EventArgs e)
+        {
+            SaveData();
+            OnUserControlFieldChanged(); // Updates the paren control for it`s data.
+        }
+
+        private void SaveData()
+        {
+            data = new WebUserControlEnvironmentsData();
+
+            data.environmentsData.Add(TextBoxEnvironmentName.Text);
+            data.environmentsData.Add(TextBoxEnvironmentCostEnter.Text);
+            data.environmentsData.Add(TextBoxEnvironmentCostIn.Text);
+            data.environmentsData.Add(TextBoxEnvironmentCostExit.Text);
+            data.environmentsData.Add(TextBoxEnvironmentDamage.Text);
+
+            data.environmentsData.Add(LabelEnvironmentNameError.Text);
+            data.environmentsData.Add(LabelEnvironmentCostEnterError.Text);
+            data.environmentsData.Add(LabelEnvironmentCostInError.Text);
+            data.environmentsData.Add(LabelEnvironmentCostExitError.Text);
+            data.environmentsData.Add(LabelEnvironmentDamageError.Text);
+        }
+
+        public void LoadData(WebUserControlEnvironmentsData other)
+        {
+            if (other.environmentsData.Count != 10)
+                throw new Exception("Opppsss");
+
+            TextBoxEnvironmentName.Text = other.environmentsData[0];
+            TextBoxEnvironmentCostEnter.Text = other.environmentsData[1];
+            TextBoxEnvironmentCostIn.Text = other.environmentsData[2];
+            TextBoxEnvironmentCostExit.Text = other.environmentsData[3];
+            TextBoxEnvironmentDamage.Text = other.environmentsData[4];
+
+            LabelEnvironmentNameError.Text = other.environmentsData[5];
+            LabelEnvironmentCostEnterError.Text = other.environmentsData[6];
+            LabelEnvironmentCostInError.Text = other.environmentsData[7];
+            LabelEnvironmentCostExitError.Text = other.environmentsData[8];
+            LabelEnvironmentDamageError.Text = other.environmentsData[9];
+
+            SaveData();
         }
     }
 }

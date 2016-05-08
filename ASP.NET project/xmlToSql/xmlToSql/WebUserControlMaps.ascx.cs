@@ -11,25 +11,40 @@ namespace xmlToSql
     {
         private Utility utilities;
 
-        public event EventHandler UserControlButtonClicked;
-
-        public bool EventHandlerSeted()
+        private WebUserControlMapsData data; // Keeps the data of the fields
+        public WebUserControlMapsData Data
         {
-            return UserControlButtonClicked != null;
+            get { return data; }
         }
-        
-        private void OnUserControlButtonClick()
+
+        public event EventHandler UserControlButtonRemoveClicked;
+        public event EventHandler UserControlFieldChanged;
+
+        #region Event Handlers
+
+        private void OnUserControlButtonRemoveClick()
         {
-            if (EventHandlerSeted())
+            if (UserControlButtonRemoveClicked != null)
             {
-                UserControlButtonClicked(this, EventArgs.Empty);
+                UserControlButtonRemoveClicked(this, EventArgs.Empty);
             }
         }
 
+        private void OnUserControlFieldChanged()
+        {
+            if (UserControlFieldChanged != null)
+            {
+                MapDataEventArgs dataEventArgs = new MapDataEventArgs(data);
+                UserControlFieldChanged(this, dataEventArgs);
+            }
+        }
+
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (utilities == null)
-                utilities = new Utility();
+            utilities = new Utility();
+            SaveData();
         }
 
         public bool Validate()
@@ -63,12 +78,14 @@ namespace xmlToSql
             else
                 LabelMapDenivelationError.Text = "";
 
+            SaveData();
+            OnUserControlFieldChanged(); // Send the information to parent page
 
             return result;
         }
 
-        // Checks if the fields are valid and writes them to the given environment @en
-        // If the fields are wrong-> sets the error messages and makes the @en NULL
+        // Checks if the fields are valid and writes them to the given map @m
+        // If the fields are wrong-> sets the error messages and makes the @m NULL
         public void WriteToMap(ref Map m)
         {
             if (!Validate())
@@ -77,6 +94,7 @@ namespace xmlToSql
             }
             else
             {
+                m = new Map();
                 m.map_name = TextBoxMapName.Text;
                 m.map_data = TextBoxMapMapData.Text;
                 m.denivelation = Decimal.Parse(TextBoxMapDenivelation.Text);
@@ -85,7 +103,7 @@ namespace xmlToSql
 
         public void ButtonRemove_Click(object sender, EventArgs e)
         {
-            OnUserControlButtonClick(); // So the parent page will remove it from it`s lists....
+            OnUserControlButtonRemoveClick(); // So the parent page will remove it from it`s lists....
         }
 
         // Clears the fields data.
@@ -99,6 +117,42 @@ namespace xmlToSql
             LabelMapNameError.Text = "";
             LabelMapMapDataError.Text = "";
             LabelMapDenivelationError.Text = "";
+        }
+
+        // If the text box field is changed -> keep the new data
+        protected void TextBoxMap_TextChanged(object sender, EventArgs e)
+        {
+            SaveData();
+            OnUserControlFieldChanged(); // Updates the paren control for it`s data.
+        }
+
+        private void SaveData()
+        {
+            data = new WebUserControlMapsData();
+
+            data.mapsData.Add(TextBoxMapName.Text);
+            data.mapsData.Add(TextBoxMapMapData.Text);
+            data.mapsData.Add(TextBoxMapDenivelation.Text);
+
+            data.mapsData.Add(LabelMapNameError.Text);
+            data.mapsData.Add(LabelMapMapDataError.Text);
+            data.mapsData.Add(LabelMapDenivelationError.Text);
+        }
+
+        public void LoadData(WebUserControlMapsData other)
+        {
+            if (other.mapsData.Count != 6) // Number of text boxes and label error fields 
+                throw new Exception("Opppsss");
+
+            TextBoxMapName.Text = other.mapsData[0];
+            TextBoxMapMapData.Text = other.mapsData[1];
+            TextBoxMapDenivelation.Text = other.mapsData[2];
+
+            LabelMapNameError.Text = other.mapsData[3];
+            LabelMapMapDataError.Text = other.mapsData[4];
+            LabelMapDenivelationError.Text = other.mapsData[5];
+
+            SaveData();
         }
     }
 }

@@ -10,19 +10,21 @@ namespace xmlToSql
     public partial class WebForm1 : System.Web.UI.Page
     {
         private string DirPath;
+        Utility utility;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (xmlToSql.Program.entities == null)
-                xmlToSql.Program.Init();
-            DirPath = @"C:\Users\Anton\Documents\Visual Studio 2013\Projects\XML-and-ASP.NET-programming\ASP.NET project\xmlToSql\xmlToSql\resources";
+            utility = new Utility();
+
+            DirPath = Server.MapPath("~/resources/");
         }
 
         protected void ButtonAddXMLFiles_Click(object sender, EventArgs e)
         {
+            ValidateXMLFIles();
             string statusValidation = "";
-            xmlToSql.Program.InsertXmlDataToDB(DirPath, ref statusValidation);
-            TextBoxValidationStatus.Text += statusValidation;
+            utility.InsertXmlDataToDB(DirPath, ref statusValidation);
+         //   TextBoxValidationStatus.Text += statusValidation;
             UpdateTablesData();
         }
 
@@ -41,7 +43,8 @@ namespace xmlToSql
 
         protected void ButtonDeleteAllData_Click(object sender, EventArgs e)
         {
-            xmlToSql.Program.DeleteDatabaseRecords();
+            utility.DeleteDatabaseRecords();
+            TextBoxValidationStatus.Text = "";
             UpdateTablesData();
         }
 
@@ -59,9 +62,14 @@ namespace xmlToSql
 
         protected void ButtonValidate_Click(object sender, EventArgs e)
         {
+            ValidateXMLFIles();
+        }
+
+        void ValidateXMLFIles()
+        {
             string statusValidation = "";
-            xmlToSql.Program.ValidateXMLFiles(DirPath, ref statusValidation);
-            TextBoxValidationStatus.Text += statusValidation;
+            utility.ValidateXMLFiles(DirPath, ref statusValidation);
+            TextBoxValidationStatus.Text = statusValidation;
         }
     }
 

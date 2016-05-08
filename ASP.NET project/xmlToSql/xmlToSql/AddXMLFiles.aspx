@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddXMLFiles.aspx.cs" Inherits="xmlToSql.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddXMLFiles.aspx.cs" Inherits="xmlToSql.WebForm1" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 

@@ -26,7 +26,7 @@
                     <asp:Label ID="LabelEnvironmentName" runat="server" AssociatedControlID="TextBoxEnvironmentName" Text="Име на околната среда: *"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBoxEnvironmentName" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEnvironmentName" runat="server" Width="178px" OnTextChanged="TextBoxEnvironment_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LabelEnvironmentNameError" runat="server" AssociatedControlID="TextBoxEnvironmentName" ForeColor="#FF5050"></asp:Label>
@@ -37,7 +37,7 @@
                     <asp:Label ID="LabelEnvironmentCostEnter" runat="server" AssociatedControlID="TextBoxEnvironmentCostEnter" Text="Цена за влизане: *"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBoxEnvironmentCostEnter" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEnvironmentCostEnter" runat="server" Width="178px" OnTextChanged="TextBoxEnvironment_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LabelEnvironmentCostEnterError" runat="server" AssociatedControlID="TextBoxEnvironmentCostEnter" ForeColor="#FF5050"></asp:Label>
@@ -48,7 +48,7 @@
                     <asp:Label ID="LabelEnvironmentCostIn" runat="server" AssociatedControlID="TextBoxEnvironmentCostIn" Text="Цена за преминаваме: *"></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="TextBoxEnvironmentCostIn" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEnvironmentCostIn" runat="server" Width="178px" OnTextChanged="TextBoxEnvironment_TextChanged"></asp:TextBox>
                 </td>
                 <td class="auto-style6">
                     <asp:Label ID="LabelEnvironmentCostInError" runat="server" AssociatedControlID="TextBoxEnvironmentCostIn" ForeColor="#FF5050"></asp:Label>
@@ -59,7 +59,7 @@
                     <asp:Label ID="LabelEnvironmentCostExit" runat="server" AssociatedControlID="TextBoxEnvironmentCostExit" Text="Цена за излизане: *"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBoxEnvironmentCostExit" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEnvironmentCostExit" runat="server" Width="178px" OnTextChanged="TextBoxEnvironment_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LabelEnvironmentCostExitError" runat="server" AssociatedControlID="TextBoxEnvironmentCostExit" ForeColor="#FF5050"></asp:Label>
@@ -70,7 +70,7 @@
                     <asp:Label ID="LabelEnvironmentDamage" runat="server" AssociatedControlID="TextBoxEnvironmentDamage" Text="Поети щети: *"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBoxEnvironmentDamage" runat="server" Width="178px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEnvironmentDamage" runat="server" Width="178px" OnTextChanged="TextBoxEnvironment_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LabelEnvironmentDamageError" runat="server" AssociatedControlID="TextBoxEnvironmentDamage" ForeColor="#FF5050"></asp:Label>

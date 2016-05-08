@@ -67,6 +67,15 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.TextBox TextBoxSimulationName;
         
         /// <summary>
+        /// LabelSimulationNameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSimulationNameError;
+        
+        /// <summary>
         /// Label1SimulationOwner control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace xmlToSql {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxSimulationOwner;
+        
+        /// <summary>
+        /// LabelSimulationOwnerError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSimulationOwnerError;
         
         /// <summary>
         /// Label1SimulationOwnerEmail control.
@@ -103,6 +121,15 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.TextBox TextBoxSimulationOwnerEmail;
         
         /// <summary>
+        /// LabelSimulationOwnerEmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSimulationOwnerEmailError;
+        
+        /// <summary>
         /// Label1SimulationDescription control.
         /// </summary>
         /// <remarks>
@@ -119,6 +146,15 @@ namespace xmlToSql {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxSimulationDescription;
+        
+        /// <summary>
+        /// LabelSimulationDescriptionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSimulationDescriptionError;
         
         /// <summary>
         /// Label1SimulationDescription0 control.
@@ -139,6 +175,15 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.TextBox TextBoxSimulationRating;
         
         /// <summary>
+        /// LabelSimulationRatimgError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSimulationRatimgError;
+        
+        /// <summary>
         /// ButtonClearRoboSimulationData control.
         /// </summary>
         /// <remarks>
@@ -157,94 +202,13 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// LabelEnvironmentName control.
+        /// PlaceHolderEnvironments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEnvironmentName;
-        
-        /// <summary>
-        /// TextBoxEnvironmentName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEnvironmentName;
-        
-        /// <summary>
-        /// LabelEnvironmentCostEnter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEnvironmentCostEnter;
-        
-        /// <summary>
-        /// TextBoxEnvironmentCostEnter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEnvironmentCostEnter;
-        
-        /// <summary>
-        /// LabelEnvironmentCostIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEnvironmentCostIn;
-        
-        /// <summary>
-        /// TextBoxEnvironmentCostIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEnvironmentCostIn;
-        
-        /// <summary>
-        /// LabelEnvironmentCostExit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEnvironmentCostExit;
-        
-        /// <summary>
-        /// TextBoxEnvironmentExit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEnvironmentExit;
-        
-        /// <summary>
-        /// LabelEnvironmentDamage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEnvironmentDamage;
-        
-        /// <summary>
-        /// TextBoxEnvironmentDamage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEnvironmentDamage;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderEnvironments;
         
         /// <summary>
         /// ButtonAddEnvironment control.
@@ -256,15 +220,6 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Button ButtonAddEnvironment;
         
         /// <summary>
-        /// ButtonClearEnvironmentData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearEnvironmentData;
-        
-        /// <summary>
         /// Label12 control.
         /// </summary>
         /// <remarks>
@@ -274,391 +229,13 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// LabelRobotName control.
+        /// PlaceHolderRobots control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotName;
-        
-        /// <summary>
-        /// TextBoxRobotName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotName;
-        
-        /// <summary>
-        /// LabelRobotOwner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotOwner;
-        
-        /// <summary>
-        /// TextBoxRobotOwner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotOwner;
-        
-        /// <summary>
-        /// LabelRobotMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotMesh;
-        
-        /// <summary>
-        /// TextBoxRobotMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotMesh;
-        
-        /// <summary>
-        /// LabelRobotSpeed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotSpeed;
-        
-        /// <summary>
-        /// TextBoxRobotSpeed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotSpeed;
-        
-        /// <summary>
-        /// LabelRobotSpeedBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotSpeedBack;
-        
-        /// <summary>
-        /// TextBoxRobotSpeedBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotSpeedBack;
-        
-        /// <summary>
-        /// LabelRobotTurningSpeed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotTurningSpeed;
-        
-        /// <summary>
-        /// TextBoxRobotTurningSpeed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotTurningSpeed;
-        
-        /// <summary>
-        /// LabelRobotTurningSpeedBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRobotTurningSpeedBack;
-        
-        /// <summary>
-        /// TextBoxRobotTurningSpeedBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRobotTurningSpeedBack;
-        
-        /// <summary>
-        /// Label13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
-        
-        /// <summary>
-        /// LabelWheelDiriving control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWheelDiriving;
-        
-        /// <summary>
-        /// DropDownListWheelDiriving control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListWheelDiriving;
-        
-        /// <summary>
-        /// LabelWheelMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWheelMesh;
-        
-        /// <summary>
-        /// TextBoxWheelMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxWheelMesh;
-        
-        /// <summary>
-        /// LabelWheelDiameter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWheelDiameter;
-        
-        /// <summary>
-        /// TextBoxWheelDiameter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxWheelDiameter;
-        
-        /// <summary>
-        /// LabelWheelWidth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWheelWidth;
-        
-        /// <summary>
-        /// TextBoxWheelWidth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxWheelWidth;
-        
-        /// <summary>
-        /// ButtonAddWheel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddWheel;
-        
-        /// <summary>
-        /// ButtonClearWheelData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearWheelData;
-        
-        /// <summary>
-        /// Label14 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
-        
-        /// <summary>
-        /// LabelSensorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSensorName;
-        
-        /// <summary>
-        /// TextBoxSensorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSensorName;
-        
-        /// <summary>
-        /// LabelSensorValueType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSensorValueType;
-        
-        /// <summary>
-        /// TextBoxSensorValueType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSensorValueType;
-        
-        /// <summary>
-        /// LabelSensorMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSensorMesh;
-        
-        /// <summary>
-        /// TextBoxSensorMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSensorMesh;
-        
-        /// <summary>
-        /// LabelSensorValuesPerSecond control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSensorValuesPerSecond;
-        
-        /// <summary>
-        /// TextBoxSensorValuesPerSecond control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSensorValuesPerSecond;
-        
-        /// <summary>
-        /// ButtonAddSensor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddSensor;
-        
-        /// <summary>
-        /// ButtonClearSensorData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearSensorData;
-        
-        /// <summary>
-        /// Label15 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label15;
-        
-        /// <summary>
-        /// LabelRotorMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRotorMesh;
-        
-        /// <summary>
-        /// TextBoxRotorMesh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRotorMesh;
-        
-        /// <summary>
-        /// LabelRotorLiftingPower control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRotorLiftingPower;
-        
-        /// <summary>
-        /// TextBoxRotorLiftingPower control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRotorLiftingPower;
-        
-        /// <summary>
-        /// ButtonAddRotor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddRotor;
-        
-        /// <summary>
-        /// ButtonClearRotorData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearRotorData;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderRobots;
         
         /// <summary>
         /// ButtonAddRobot control.
@@ -670,15 +247,6 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Button ButtonAddRobot;
         
         /// <summary>
-        /// ButtonClearRobotData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearRobotData;
-        
-        /// <summary>
         /// Label16 control.
         /// </summary>
         /// <remarks>
@@ -688,58 +256,13 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// LabelMapName control.
+        /// PlaceHolderMaps control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMapName;
-        
-        /// <summary>
-        /// TextBoxMapName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMapName;
-        
-        /// <summary>
-        /// LabelMapMapData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMapMapData;
-        
-        /// <summary>
-        /// TextBoxMapMapData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMapMapData;
-        
-        /// <summary>
-        /// LabelMapDenivelation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMapDenivelation;
-        
-        /// <summary>
-        /// TextBoxMapDenivelation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMapDenivelation;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderMaps;
         
         /// <summary>
         /// ButtonAddMap control.
@@ -751,15 +274,6 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Button ButtonAddMap;
         
         /// <summary>
-        /// ButtonClearMapData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearMapData;
-        
-        /// <summary>
         /// Label17 control.
         /// </summary>
         /// <remarks>
@@ -769,94 +283,13 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Label Label17;
         
         /// <summary>
-        /// LabelAlgorithmName control.
+        /// PlaceHolderAlgorithms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAlgorithmName;
-        
-        /// <summary>
-        /// TextBoxAlgorithmName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAlgorithmName;
-        
-        /// <summary>
-        /// LabelAlgorithmDiffEnvironments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAlgorithmDiffEnvironments;
-        
-        /// <summary>
-        /// DropDownListAlgorithmDiffEnvironments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAlgorithmDiffEnvironments;
-        
-        /// <summary>
-        /// LabelAlgorithmMultipleDestPoints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAlgorithmMultipleDestPoints;
-        
-        /// <summary>
-        /// DropDownListAlgorighmMultipleDestPoints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAlgorighmMultipleDestPoints;
-        
-        /// <summary>
-        /// LabelAlgorithmComplexity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAlgorithmComplexity;
-        
-        /// <summary>
-        /// TextBoxAlgorithmComplexity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAlgorithmComplexity;
-        
-        /// <summary>
-        /// LabelAlgorithmDepth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAlgorithmDepth;
-        
-        /// <summary>
-        /// TextBoxAlgorithmDepth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAlgorithmDepth;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderAlgorithms;
         
         /// <summary>
         /// ButtonAddAlgorithm control.
@@ -868,24 +301,6 @@ namespace xmlToSql {
         protected global::System.Web.UI.WebControls.Button ButtonAddAlgorithm;
         
         /// <summary>
-        /// ButtonClearAlgorithmData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonClearAlgorithmData;
-        
-        /// <summary>
-        /// ButtonSaveToXMLFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSaveToXMLFile;
-        
-        /// <summary>
         /// ButtonSaveToDB control.
         /// </summary>
         /// <remarks>
@@ -893,6 +308,15 @@ namespace xmlToSql {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonSaveToDB;
+        
+        /// <summary>
+        /// LabelValidationStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelValidationStatus;
         
         /// <summary>
         /// Label18 control.
